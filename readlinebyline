@@ -1,0 +1,36 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<sstring>
+
+using namespace std;
+int main(){
+ifstream read("file.txt");/*  or ifstream read;  read.open("file.txt");*/
+int a,b;
+while(read>>a>>b){ 
+
+
+}
+
+return 0;}
+
+------------------------------------------------------or------------------------------------------------
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<sstring>
+
+using namespace std;
+int main(){
+ifstream read("file.txt");/*  or ifstream read;  read.open("file.txt");*/
+
+string line;
+int a,b;
+while(getline(read,line)){
+istringstream iss(line);
+if(!(iss>>a>>b)){
+      break;
+
+}
+}
+return 0;}
