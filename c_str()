@@ -1,0 +1,32 @@
+/*RETURNS A POINTER TO AN ARRAY OF NULL TERMINATED STREAM OF CHARACTERS REPRESENTING THE CURRENT VALUE OF THE STRING OBJECT
+INCLUDES THE SAME SEQUENCE OF CHARACTERS AS THE STRING OBJECT PLUS AN ADDITIONAL '\0'(NULL) CHARACTER AT THE END*/
+
+#include<iostream>
+#include<string>
+#include<cstring>
+using namespace std;
+int main(){
+    
+    string str ("this is a string");
+    cout<<str<<endl;
+    string str1="tins is another string";
+    cout<<str1<<endl;
+    /*what given code is doing: create a str of type string, declare a char string of length str pointed by pointer cstr, used strcpy to copy str into cstr 
+    , strtok(cstr," ") assigned to char pointer *p and parsed the strtok(NULL," ") using p*/
+    char *c=new char [str.length()+1];
+    //c="this strgin is built using nerw";
+    //strcpy(c,str.c_str());
+    //cout<<c<<endl;
+    char *p=strtok(str," ");
+    while(p){
+        cout<<p<<endl;
+        p=strtok(NULL ," ");
+        
+    }
+    delete[] c;
+    return 0;
+}
+-----------------------------------------------------PROBLEM-------------------------------------------------
+strtok() without .c_str() doesn't work but when the name of the file is passed instead of the string we don't need any strtok() to tokenise
+the input file the stream object reads words by default. get to the depth of this behaviour
+
